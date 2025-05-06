@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Serviço do Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABBklEQVR42uzXMQ6CQBAF0P//m2yKI9mQQw7SQd4SpRrf0cOZCZJpW3E3s1ET6AhAAAAAAAAAAAAAAAAgOXQL9/8p5K3vbnY9D9Zc/1l7+3v6P1lTathRkFtN6u3z5vVqjbWFC0XG1Tq7fPl9WqNZYULRcbVOftvVqjbWFC0XG1Tq7fPl9WqNZYULRcbVOftvVqjbWFC0XG1Tq7fPl9WqNZYULRcbVOftvVqjbWFC0XG1Tq7fPl9WqNZYULRcbVOftvVqjbWFC0XG1Tq7fPl9WqNZYULRcbVOftvVr/N+sWAAAAAAAAAAAAAAAAAPzA/wBpC2wzF9W2SwAAAABJRU5ErkJggg==') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #000;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            background-color: #000;
+            color: white;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .confirmation-box {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .confirmation-box input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .confirmation-box button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .confirmation-box button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Termos de Serviço do Bot</h1>
+    </header>
+    <main>
+        <h2>1. Aceitação dos Termos</h2>
+        <p>
+            Ao usar este bot, você concorda em cumprir e respeitar os seguintes termos e condições. Caso não concorde com algum termo, não utilize o bot.
+        </p>
+
+        <h2>2. Uso do Bot</h2>
+        <p>
+            O bot é fornecido para uso em servidores Discord para fins específicos. Você concorda em usá-lo de maneira responsável, sem abusos ou atividades prejudiciais.
+        </p>
+
+        <h2>3. Coleta de Dados</h2>
+        <p>
+            O bot pode coletar dados como IDs de usuários, mensagens e eventos para fins de funcionamento. Nenhum dado será compartilhado com terceiros sem consentimento.
+        </p>
+
+        <h2>4. Restrições</h2>
+        <p>
+            Você não pode usar este bot para:
+        </p>
+        <ul>
+            <li>Violar leis ou regulamentos locais, nacionais ou internacionais.</li>
+            <li>Enviar spam, phishing ou qualquer conteúdo malicioso.</li>
+            <li>Prejudicar outros usuários ou comprometer a segurança do servidor.</li>
+        </ul>
+
+        <h2>5. Modificações</h2>
+        <p>
+            Os termos de serviço podem ser alterados a qualquer momento. É sua responsabilidade verificar este documento periodicamente.
+        </p>
+
+        <h2>6. Limitação de Responsabilidade</h2>
+        <p>
+            O bot é fornecido "como está", sem garantias de qualquer tipo. Não nos responsabilizamos por qualquer dano direto ou indireto causado pelo uso do bot.
+        </p>
+
+        <h2>7. Contato</h2>
+        <p>
+            Se você tiver dúvidas ou preocupações sobre estes termos, entre em contato conosco em <a href="mailto:dev.agah.git@gmail.com">dev.agah.git@gmail.com</a>.
+        </p>
+
+        <div class="confirmation-box">
+            <input type="checkbox" id="termsCheckbox" onclick="toggleButton()">
+            <label for="termsCheckbox">Eu estou ciente</label>
+            <br>
+            <button id="submitButton" disabled onclick="sendConfirmation()">Confirmar</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 TN. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleButton() {
+            const checkbox = document.getElementById('termsCheckbox');
+            const button = document.getElementById('submitButton');
+            button.disabled = !checkbox.checked;
+        }
+
+        function sendConfirmation() {
+            const email = prompt("Por favor, insira seu e-mail para confirmação:");
+            if (email) {
+                // Simula o envio de e-mail - Aqui você pode integrar com um backend real
+                alert(`Confirmação enviada para ${email}. Você aceitou os termos e não pode violá-los.`);
+                // Fechar o site após a confirmação
+                window.close();
+            } else {
+                alert("E-mail não fornecido. Por favor, tente novamente.");
+            }
+        }
+    </script>
+</body>
+</html>
